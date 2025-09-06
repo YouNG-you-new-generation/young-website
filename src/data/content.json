@@ -1,0 +1,196 @@
+{
+  "site": {
+    "title": "Young - You New Generation",
+    "description": "Geleceğin liderlerini yetiştiriyoruz",
+    "keywords": "gençlik, eğitim, gelecek, liderlik, teknoloji"
+  },
+  "colors": {
+    "lightMode": {
+      "primary": "#9BC31C",
+      "lightGray": "#D9D9D9",
+      "darkGray": "#8A8A8A",
+      "lightBlue": "#F0F7FF",
+      "lightGreen": "#C5DB81",
+      "white": "#FFFFFF"
+    },
+    "darkMode": {
+      "primary": "#9BC31C",
+      "lightGreen": "#C5DB81",
+      "white": "#FFFFFF",
+      "lightGray": "#D9D9D9",
+      "darkGray": "#8A8A8A"
+    }
+  },
+  "navigation": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "services": "Hizmetlerimiz",
+    "programs": "Programlar",
+    "contact": "İletişim"
+  },
+  "hero": {
+    "title": "Young",
+    "subtitle": "You New Generation",
+    "description": "Yardımlaşmayı hedefleyen, kâr amacı gütmeyen, sosyal, zihinsel, kişisel gelişimi gözeterek takım ruhu ile gençleri kendilerini bilen, yenilikçi, lider bireyler olmak ve geleceğimizi en iyi şekilde yönlendirmek amacıyla You New Generation olarak bir araya geldik.",
+    "cta": "Topluluğa Katıl",
+    "secondaryCta": "Misyonumuzu Keşfet"
+  },
+  "about": {
+    "title": "Hakkımızda",
+    "subtitle": "Neden You New Generation?",
+    "description": "Biz sadece bir eğitim kurumu değil, bir aileyiz. Gençlerin potansiyelini keşfetmelerine, birbirlerine yardım etmelerine ve birlikte büyümelerine yardımcı oluyoruz.",
+    "mission": "Yardımlaşmayı hedefleyen, kâr amacı gütmeyen, sosyal, zihinsel, kişisel gelişimi gözeterek takım ruhu ile gençleri kendilerini bilen, yenilikçi, lider bireyler olmak ve geleceğimizi en iyi şekilde yönlendirmek amacıyla You New Generation olarak bir araya geldik.",
+    "stats": [
+      {
+        "number": "500+",
+        "label": "Topluluk Üyesi"
+      },
+      {
+        "number": "50+",
+        "label": "Etkinlik"
+      },
+      {
+        "number": "100%",
+        "label": "Yardımlaşma"
+      }
+    ]
+  },
+  "services": {
+    "title": "Hizmetlerimiz",
+    "subtitle": "Nasıl Yardımcı Oluyoruz?",
+    "description": "Gençlerin kişisel ve profesyonel gelişimi için ücretsiz hizmetler sunuyoruz",
+    "items": [
+      {
+        "title": "Teknoloji Eğitimi",
+        "description": "Güncel teknolojileri öğrenin ve geleceğin dijital dünyasına hazır olun.",
+        "icon": "💻"
+      },
+      {
+        "title": "Liderlik Gelişimi",
+        "description": "Liderlik becerilerinizi geliştirin ve takımları yönetmeyi öğrenin.",
+        "icon": "🎯"
+      },
+      {
+        "title": "İnovasyon Atölyeleri",
+        "description": "Yaratıcı düşünme ve problem çözme becerilerinizi geliştirin.",
+        "icon": "🚀"
+      },
+      {
+        "title": "Kariyer Danışmanlığı",
+        "description": "Kariyer hedeflerinizi belirleyin ve doğru yolda ilerleyin.",
+        "icon": "📈"
+      }
+    ]
+  },
+  "programs": {
+    "title": "Programlarımız",
+    "subtitle": "Ücretsiz Genel Eğitim Programları",
+    "categories": [
+      {
+        "name": "Liderlik Programları",
+        "description": "Liderlik becerilerinizi geliştirin ve geleceğin lideri olun",
+        "items": [
+          {
+            "title": "Genç Liderler Akademisi",
+            "duration": "6 Ay",
+            "features": ["Liderlik Eğitimi", "Mentorluk", "Proje Yönetimi", "Sertifika", "Takım Yönetimi"],
+            "popular": true
+          },
+          {
+            "title": "Stratejik Düşünme",
+            "duration": "3 Ay",
+            "features": ["Strateji Geliştirme", "Analitik Düşünme", "Problem Çözme", "Sertifika"],
+            "popular": false
+          },
+          {
+            "title": "İletişim Becerileri",
+            "duration": "2 Ay",
+            "features": ["Etkili İletişim", "Sunum Teknikleri", "Müzakere", "Sertifika"],
+            "popular": false
+          }
+        ]
+      },
+      {
+        "name": "Departman Programları",
+        "description": "Farklı alanlarda uzmanlaşın ve kariyerinizi geliştirin",
+        "items": [
+          {
+            "title": "Teknoloji Departmanı",
+            "duration": "8 Ay",
+            "features": ["Yazılım Geliştirme", "Web Tasarım", "Mobil Uygulama", "Sertifika", "Proje"],
+            "popular": true
+          },
+          {
+            "title": "Pazarlama Departmanı",
+            "duration": "6 Ay",
+            "features": ["Dijital Pazarlama", "Sosyal Medya", "İçerik Üretimi", "Sertifika"],
+            "popular": false
+          },
+          {
+            "title": "Finans Departmanı",
+            "duration": "4 Ay",
+            "features": ["Finansal Analiz", "Bütçe Yönetimi", "Yatırım", "Sertifika"],
+            "popular": false
+          }
+        ]
+      },
+      {
+        "name": "Ekip Programları",
+        "description": "Takım çalışması ve proje yönetimi becerilerinizi geliştirin",
+        "items": [
+          {
+            "title": "Proje Yönetimi",
+            "duration": "5 Ay",
+            "features": ["Proje Planlama", "Risk Yönetimi", "Takım Liderliği", "Sertifika", "Gerçek Proje"],
+            "popular": true
+          },
+          {
+            "title": "Takım Çalışması",
+            "duration": "3 Ay",
+            "features": ["İşbirliği", "Çatışma Çözümü", "Motivasyon", "Sertifika"],
+            "popular": false
+          },
+          {
+            "title": "İnovasyon Ekipleri",
+            "duration": "4 Ay",
+            "features": ["Tasarım Düşüncesi", "Prototip", "Test", "Sertifika"],
+            "popular": false
+          }
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "title": "İletişim",
+    "subtitle": "Bizimle İletişime Geçin",
+    "description": "Sorularınız için bize ulaşın, size yardımcı olmaktan mutluluk duyarız.",
+    "form": {
+      "name": "Ad Soyad",
+      "email": "E-posta",
+      "subject": "Konu",
+      "message": "Mesaj",
+      "submit": "Gönder"
+    },
+    "info": {
+      "address": "İstanbul, Türkiye",
+      "phone": "+90 (212) 555 0123",
+      "email": "info@younggeneration.com"
+    }
+  },
+  "footer": {
+    "description": "Young - You New Generation olarak gençlerin geleceğini şekillendiriyoruz.",
+    "links": {
+      "about": "Hakkımızda",
+      "company": "Şirket",
+      "careers": "Kariyer",
+      "contact": "İletişim"
+    },
+    "social": {
+      "facebook": "Facebook",
+      "twitter": "Twitter",
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn"
+    },
+    "copyright": "© 2024 Young - You New Generation. Tüm hakları saklıdır."
+  }
+}
