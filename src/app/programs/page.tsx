@@ -1,54 +1,38 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Header from '@/components/Header';
+import content from '@/data/content.json';
 import { SiteContent } from '@/types/content';
 
+const siteContent = content as SiteContent;
+
 export default function ProgramsPage() {
-  const [content, setContent] = useState<SiteContent | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>('liderlik');
 
-  useEffect(() => {
-    const fetchContent = async () => {
-      try {
-        const response = await fetch('/api/content');
-        if (!response.ok) throw new Error('Content fetch failed');
-        const data = await response.json();
-        setContent(data);
-      } catch (err) {
-        console.error('Error:', err);
-      }
-    };
-    fetchContent();
-  }, []);
-
-  if (!content) {
-    return null;
-  }
-
-  const currentCategory = content.programs.categories.find(cat => cat.name === activeCategory);
+  const currentCategory = siteContent.programs.categories.find(cat => cat.name === activeCategory);
 
   return (
     <main className="min-h-screen">
-      <Header navigation={content.navigation} colors={content.colors} />
+      <Header navigation={siteContent.navigation} colors={siteContent.colors} />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-16" style={{ backgroundColor: content.colors.lightMode.lightBlue }}>
+      <section className="pt-20 pb-16" style={{ backgroundColor: siteContent.colors.lightMode.lightBlue }}>
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-light mb-6" style={{ color: content.colors.lightMode.darkGray }}>
+          <h1 className="text-5xl md:text-6xl font-light mb-6" style={{ color: siteContent.colors.lightMode.darkGray }}>
             Programlarımız
           </h1>
-          <p className="text-xl opacity-80 max-w-2xl mx-auto" style={{ color: content.colors.lightMode.darkGray }}>
+          <p className="text-xl opacity-80 max-w-2xl mx-auto" style={{ color: siteContent.colors.lightMode.darkGray }}>
             Ücretsiz gelişim programları ile geleceğinizi şekillendirin
           </p>
         </div>
       </section>
 
       {/* Category Tabs */}
-      <section className="py-8" style={{ backgroundColor: content.colors.lightMode.white }}>
+      <section className="py-8" style={{ backgroundColor: siteContent.colors.lightMode.white }}>
         <div className="max-w-4xl mx-auto px-6">
           <div className="flex flex-wrap justify-center gap-4">
-            {content.programs.categories.map((category) => (
+            {siteContent.programs.categories.map((category) => (
               <button
                 key={category.name}
                 onClick={() => setActiveCategory(category.name)}
@@ -59,7 +43,7 @@ export default function ProgramsPage() {
                 }`}
                 style={{
                   backgroundColor: activeCategory === category.name 
-                    ? content.colors.lightMode.primary 
+                    ? siteContent.colors.lightMode.primary 
                     : 'transparent'
                 }}
               >
@@ -71,13 +55,13 @@ export default function ProgramsPage() {
       </section>
 
       {/* Programs Grid */}
-      <section className="py-16" style={{ backgroundColor: content.colors.lightMode.lightBlue }}>
+      <section className="py-16" style={{ backgroundColor: siteContent.colors.lightMode.lightBlue }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-light mb-4" style={{ color: content.colors.lightMode.primary }}>
+            <h2 className="text-3xl font-light mb-4" style={{ color: siteContent.colors.lightMode.primary }}>
               {currentCategory?.name}
             </h2>
-            <p className="text-lg opacity-80" style={{ color: content.colors.lightMode.darkGray }}>
+            <p className="text-lg opacity-80" style={{ color: siteContent.colors.lightMode.darkGray }}>
               {currentCategory?.description}
             </p>
           </div>
@@ -86,13 +70,13 @@ export default function ProgramsPage() {
             {currentCategory?.items.map((program, index) => (
               <div key={index} className="group">
                 <div className="p-6 rounded-3xl transition-all duration-300 hover:scale-105" style={{ 
-                  backgroundColor: content.colors.lightMode.white,
-                  border: `2px solid ${content.colors.lightMode.primary}`
+                  backgroundColor: siteContent.colors.lightMode.white,
+                  border: `2px solid ${siteContent.colors.lightMode.primary}`
                 }}>
-                  <h3 className="text-xl font-medium mb-3 text-center" style={{ color: content.colors.lightMode.darkGray }}>
+                  <h3 className="text-xl font-medium mb-3 text-center" style={{ color: siteContent.colors.lightMode.darkGray }}>
                     {program.title}
                   </h3>
-                  <div className="text-base leading-relaxed text-center mb-6" style={{ color: content.colors.lightMode.darkGray }}>
+                  <div className="text-base leading-relaxed text-center mb-6" style={{ color: siteContent.colors.lightMode.darkGray }}>
                     Süre: {program.duration}
                   </div>
                   <ul className="mb-6 text-sm text-gray-600 list-disc list-inside">
@@ -102,10 +86,10 @@ export default function ProgramsPage() {
                   </ul>
                   <div className="text-center">
                     <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium" style={{ 
-                      backgroundColor: content.colors.lightMode.lightGreen,
-                      color: content.colors.lightMode.primary
+                      backgroundColor: siteContent.colors.lightMode.lightGreen,
+                      color: siteContent.colors.lightMode.primary
                     }}>
-                      <div className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: content.colors.lightMode.primary }}></div>
+                      <div className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: siteContent.colors.lightMode.primary }}></div>
                       {program.popular ? 'Popüler' : 'Ücretsiz'}
                     </div>
                   </div>
@@ -117,9 +101,9 @@ export default function ProgramsPage() {
       </section>
 
       {/* Program Benefits */}
-      <section className="py-16" style={{ backgroundColor: content.colors.lightMode.white }}>
+      <section className="py-16" style={{ backgroundColor: siteContent.colors.lightMode.white }}>
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl font-light mb-12 text-center" style={{ color: content.colors.lightMode.primary }}>
+          <h2 className="text-3xl font-light mb-12 text-center" style={{ color: siteContent.colors.lightMode.primary }}>
             Program Avantajları
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -130,15 +114,15 @@ export default function ProgramsPage() {
               { icon: '🚀', title: 'Kariyer', desc: 'Kariyerinizi hızlandırın' }
             ].map((benefit, index) => (
               <div key={index} className="flex items-start space-x-4 p-6 rounded-2xl" style={{ 
-                backgroundColor: content.colors.lightMode.lightBlue,
-                border: `1px solid ${content.colors.lightMode.primary}20`
+                backgroundColor: siteContent.colors.lightMode.lightBlue,
+                border: `1px solid ${siteContent.colors.lightMode.primary}20`
               }}>
                 <div className="text-3xl">{benefit.icon}</div>
                 <div>
-                  <h3 className="text-lg font-medium mb-2" style={{ color: content.colors.lightMode.primary }}>
+                  <h3 className="text-lg font-medium mb-2" style={{ color: siteContent.colors.lightMode.primary }}>
                     {benefit.title}
                   </h3>
-                  <p className="text-sm" style={{ color: content.colors.lightMode.darkGray }}>
+                  <p className="text-sm" style={{ color: siteContent.colors.lightMode.darkGray }}>
                     {benefit.desc}
                   </p>
                 </div>
@@ -149,19 +133,19 @@ export default function ProgramsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16" style={{ backgroundColor: content.colors.lightMode.lightBlue }}>
+      <section className="py-16" style={{ backgroundColor: siteContent.colors.lightMode.lightBlue }}>
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="p-10 rounded-3xl" style={{ 
-            backgroundColor: content.colors.lightMode.white,
-            border: `2px solid ${content.colors.lightMode.primary}`
+            backgroundColor: siteContent.colors.lightMode.white,
+            border: `2px solid ${siteContent.colors.lightMode.primary}`
           }}>
-            <h2 className="text-3xl font-light mb-6" style={{ color: content.colors.lightMode.darkGray }}>
+            <h2 className="text-3xl font-light mb-6" style={{ color: siteContent.colors.lightMode.darkGray }}>
               Hangi Program Size Uygun?
             </h2>
-            <p className="text-lg mb-8" style={{ color: content.colors.lightMode.darkGray }}>
+            <p className="text-lg mb-8" style={{ color: siteContent.colors.lightMode.darkGray }}>
               Ücretsiz danışmanlık alın ve size en uygun programı bulun
             </p>
-            <button className="px-8 py-4 text-white font-medium text-lg rounded-xl transition-all duration-300 hover:scale-105" style={{ backgroundColor: content.colors.lightMode.primary }}>
+            <button className="px-8 py-4 text-white font-medium text-lg rounded-xl transition-all duration-300 hover:scale-105" style={{ backgroundColor: siteContent.colors.lightMode.primary }}>
               Danışmanlık Al
             </button>
           </div>

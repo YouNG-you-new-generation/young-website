@@ -1,40 +1,22 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
+import content from '@/data/content.json';
 import { SiteContent } from '@/types/content';
 
+const siteContent = content as SiteContent;
+
 export default function ServicesPage() {
-  const [content, setContent] = useState<SiteContent | null>(null);
-
-  useEffect(() => {
-    const fetchContent = async () => {
-      try {
-        const response = await fetch('/api/content');
-        if (!response.ok) throw new Error('Content fetch failed');
-        const data = await response.json();
-        setContent(data);
-      } catch (err) {
-        console.error('Error:', err);
-      }
-    };
-    fetchContent();
-  }, []);
-
-  if (!content) {
-    return null;
-  }
-
   return (
     <main className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
-  <Header navigation={content.navigation} colors={content.colors} />
+  <Header navigation={siteContent.navigation} />
       
       {/* Hero Section */}
       <section className="pt-24 pb-20 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle, ${content.colors.lightMode.primary} 1px, transparent 1px)`,
+            backgroundImage: `radial-gradient(circle, ${siteContent.colors.lightMode.primary} 1px, transparent 1px)`,
             backgroundSize: '60px 60px'
           }}></div>
         </div>
@@ -53,7 +35,7 @@ export default function ServicesPage() {
       <section className="py-20 relative">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {content.services.items.map((service, index) => (
+            {siteContent.services.items.map((service, index) => (
               <div key={index} className="group">
                 <div className="p-10 rounded-3xl transition-all duration-500 hover:scale-105 hover:shadow-2xl transform bg-white shadow-xl border border-gray-200/50 overflow-hidden relative">
                   {/* Background Gradient */}

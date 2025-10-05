@@ -1,33 +1,15 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
+import content from '@/data/content.json';
 import { SiteContent } from '@/types/content';
 
+const siteContent = content as SiteContent;
+
 export default function AboutPage() {
-  const [content, setContent] = useState<SiteContent | null>(null);
-
-  useEffect(() => {
-    const fetchContent = async () => {
-      try {
-        const response = await fetch('/api/content');
-        if (!response.ok) throw new Error('Content fetch failed');
-        const data = await response.json();
-        setContent(data);
-      } catch (err) {
-        console.error('Error:', err);
-      }
-    };
-    fetchContent();
-  }, []);
-
-  if (!content) {
-    return null;
-  }
-
   return (
     <main className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
-      <Header navigation={content.navigation} colors={content.colors} />
+      <Header navigation={siteContent.navigation} />
       
       {/* Hero Section */}
       <section className="pt-24 pb-20 relative overflow-hidden">
@@ -51,7 +33,7 @@ export default function AboutPage() {
           
           {/* Motto Badge */}
           <div className="inline-block px-10 py-5 rounded-full bg-gradient-to-r from-green-500 to-green-600 text-white shadow-2xl transform hover:scale-105 transition-all duration-300">
-            <span className="text-xl font-bold tracking-wide">"Bağ Kur, Büyü, Lider Ol"</span>
+            <span className="text-xl font-bold tracking-wide">&ldquo;Bağ Kur, Büyü, Lider Ol&rdquo;</span>
           </div>
         </div>
       </section>
