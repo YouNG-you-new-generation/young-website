@@ -17,13 +17,21 @@ export async function getContent(): Promise<SiteContent> {
         keywords: "gençlik, eğitim, gelecek, liderlik, teknoloji"
       },
       colors: {
-        primary: "#9BC31C",
-        primaryLight: "#C5DB81",
-        lightGray: "#D9D9D9",
-        darkGray: "#8A8A8A",
-        lightBlue: "#F0F7FF",
-        white: "#FFFFFF",
-        black: "#000000"
+        lightMode: {
+          primary: "#9BC31C",
+          lightGray: "#D9D9D9",
+          darkGray: "#8A8A8A",
+          lightBlue: "#F0F7FF",
+          lightGreen: "#C5DB81",
+          white: "#FFFFFF"
+        },
+        darkMode: {
+          primary: "#9BC31C",
+          lightGreen: "#C5DB81",
+          white: "#FFFFFF",
+          lightGray: "#D9D9D9",
+          darkGray: "#8A8A8A"
+        }
       },
       navigation: {
         home: "Ana Sayfa",
@@ -43,6 +51,7 @@ export async function getContent(): Promise<SiteContent> {
         title: "Hakkımızda",
         subtitle: "Neden Young - You New Generation?",
         description: "Young - You New Generation olarak, gençlerin kişisel ve profesyonel gelişimine odaklanıyoruz.",
+        mission: "Yardımlaşmayı hedefleyen, sosyal, zihinsel, kişisel gelişimi gözeterek takım ruhu ile gençleri kendilerini bilen, yenilikçi, lider bireyler olmak ve geleceğimizi en iyi şekilde yönlendirmek.",
         stats: [
           { number: "1000+", label: "Mutlu Öğrenci" },
           { number: "50+", label: "Uzman Eğitmen" },
@@ -52,6 +61,7 @@ export async function getContent(): Promise<SiteContent> {
       services: {
         title: "Hizmetlerimiz",
         subtitle: "Size Sunduğumuz Değerler",
+        description: "Gençlerin kişisel ve profesyonel gelişimine odaklanan, ücretsiz ve kapsamlı hizmetler sunuyoruz.",
         items: [
           {
             title: "Teknoloji Eğitimi",

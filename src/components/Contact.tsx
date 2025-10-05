@@ -4,10 +4,10 @@ import { ContactSection, ColorPalette } from '@/types/content';
 
 interface ContactProps {
   contact: ContactSection;
-  colors: ColorPalette;
+  colors?: ColorPalette;
 }
 
-export default function Contact({ contact, colors }: ContactProps) {
+export default function Contact({ contact }: ContactProps) {
   return (
     <section className="relative py-24 bg-white overflow-hidden">
       {/* Background Elements */}

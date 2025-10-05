@@ -4,10 +4,10 @@ import { ProgramsSection, ColorPalette } from '@/types/content';
 
 interface ProgramsProps {
   programs: ProgramsSection;
-  colors: ColorPalette;
+  colors?: ColorPalette;
 }
 
-export default function Programs({ programs, colors }: ProgramsProps) {
+export default function Programs({ programs }: ProgramsProps) {
   return (
     <section className="relative py-24 bg-gradient-to-br from-[#F0F7FF] to-white overflow-hidden">
       {/* Background Elements */}

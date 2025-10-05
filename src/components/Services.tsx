@@ -4,10 +4,10 @@ import { ServicesSection, ColorPalette } from '@/types/content';
 
 interface ServicesProps {
   services: ServicesSection;
-  colors: ColorPalette;
+  colors?: ColorPalette;
 }
 
-export default function Services({ services, colors }: ServicesProps) {
+export default function Services({ services }: ServicesProps) {
   return (
     <section className="relative py-24 bg-white overflow-hidden">
       {/* Background Elements */}

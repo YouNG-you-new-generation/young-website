@@ -4,10 +4,10 @@ import { HeroSection, ColorPalette } from '@/types/content';
 
 interface HeroProps {
   hero: HeroSection;
-  colors: ColorPalette;
+  colors?: ColorPalette;
 }
 
-export default function Hero({ hero, colors }: HeroProps) {
+export default function Hero({ hero }: HeroProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center">
       {/* Main Content */}

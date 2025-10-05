@@ -4,10 +4,10 @@ import { AboutSection, ColorPalette } from '@/types/content';
 
 interface AboutProps {
   about: AboutSection;
-  colors: ColorPalette;
+  colors?: ColorPalette;
 }
 
-export default function About({ about, colors }: AboutProps) {
+export default function About({ about }: AboutProps) {
   return (
     <section className="relative py-24 bg-gradient-to-br from-white to-[#F0F7FF] overflow-hidden">
       {/* Background Elements */}

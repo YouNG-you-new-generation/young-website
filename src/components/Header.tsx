@@ -7,10 +7,10 @@ import Image from 'next/image';
 
 interface HeaderProps {
   navigation: Navigation;
-  colors: ColorPalette;
+  colors?: ColorPalette;
 }
 
-export default function Header({ navigation, colors }: HeaderProps) {
+export default function Header({ navigation }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -68,7 +68,7 @@ export default function Header({ navigation, colors }: HeaderProps) {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
-            {navLinks.map((link, index) => (
+            {navLinks.map((link) => (
               <Link
                 key={link.key}
                 href={link.href}

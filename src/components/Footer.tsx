@@ -1,15 +1,9 @@
 'use client';
 
-import { FooterSection, ColorPalette } from '@/types/content';
 import Link from 'next/link';
 import Image from 'next/image';
 
-interface FooterProps {
-  footer: FooterSection;
-  colors: ColorPalette;
-}
-
-export default function Footer({ footer, colors }: FooterProps) {
+export default function Footer() {
   return (
     <footer className="relative bg-gradient-to-br from-[#8A8A8A] via-[#8A8A8A] to-[#8A8A8A] overflow-hidden">
       {/* Background Elements */}
